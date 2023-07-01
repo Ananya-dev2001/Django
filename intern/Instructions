@@ -1,0 +1,1 @@
+For running this form in your virtual environment first clone this code and then in control pannel run the command "python manage.py runserver" and then go to your web browser and enter the address "http://localhost:8000/appname/add/" to open the form 
