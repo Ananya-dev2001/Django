@@ -1,0 +1,21 @@
+<h2>Customer Details</h2>
+<form method="post" action="{% url 'customer_view' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+<h2>Filtered Customers</h2>
+<form method="get" action="{% url 'customer_view' %}">
+    <label for="account_type_filter">Account Type:</label>
+    <input type="text" name="account_type" id="account_type_filter">
+    <label for="account_number_filter">Account Number:</label>
+    <input type="text" name="account_number" id="account_number_filter">
+    <button type="submit">Filter</button>
+</form>
+
+{% for customer in customers %}
+    <p>{{ customer.name }}</p>
+{% empty %}
+    <p>No customers found.</p>
+{% endfor %}
