@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Category List</title>
+</head>
+<body>
+  <h2>Categories</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Category Name</th>
+        <th>Product Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for category in categories %}
+      <tr>
+        <td>{{ category.name }}</td>
+        <td>{{ category.products.count }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
