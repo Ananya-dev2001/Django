@@ -1,0 +1,16 @@
+<h2>{{ book.title }}</h2>
+<p>Author: {{ book.author }}</p>
+<p>Price: {{ book.price }}</p>
+<!-- Add other book information here -->
+
+<h3>Reviews</h3>
+{% for review in reviews %}
+    <div>
+        <p>Content: {{ review.content }}</p>
+        <p>Rating: {{ review.rating }}</p>
+    </div>
+{% empty %}
+    <p>No reviews yet.</p>
+{% endfor %}
+
+<!-- Add review submission form here -->
