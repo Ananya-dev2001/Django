@@ -1,0 +1,32 @@
+<h1>Shipment Details</h1>
+<p><strong>Shipment ID:</strong> {{ shipment.id }}</p>
+<p><strong>Origin:</strong> {{ shipment.origin }}</p>
+<p><strong>Destination:</strong> {{ shipment.destination }}</p>
+<p><strong>Expected Delivery Date:</strong> {{ shipment.expected_delivery_date }}</p>
+<p><strong>Actual Delivery Date:</strong> {{ shipment.actual_delivery_date }}</p>
+
+<h2>Cargo Items</h2>
+<ul>
+  {% for item in cargo %}
+    <li>{{ item.name }} - Quantity: {{ item.quantity }}</li>
+  {% empty %}
+    <li>No cargo items found.</li>
+  {% endfor %}
+</ul>
+
+<h2>Tracking Information</h2>
+<ul>
+  {% for track in tracking %}
+    <li>Status: {{ track.status }}</li>
+    <li>Location: {{ track.location }}</li>
+  {% empty %}
+    <li>No tracking information available.</li>
+  {% endfor %}
+</ul>
+
+<form method="post">
+  {% csrf_token %}
+  <!-- Form fields for creating/updating cargo and tracking -->
+  <!-- Add appropriate input fields here -->
+  <button type="submit">Save</button>
+</form>

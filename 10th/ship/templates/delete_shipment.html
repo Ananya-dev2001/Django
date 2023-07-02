@@ -1,0 +1,6 @@
+<h2>Delete Shipment</h2>
+<p>Are you sure you want to delete the shipment from {{ shipment.origin }} to {{ shipment.destination }}?</p>
+<form method="post" action="{% url 'delete_shipment_view' shipment.id %}">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+</form>

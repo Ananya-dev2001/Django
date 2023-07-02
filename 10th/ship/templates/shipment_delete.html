@@ -1,0 +1,12 @@
+<h1>Delete Shipment</h1>
+<p>Are you sure you want to delete the following shipment?</p>
+<p><strong>Shipment ID:</strong> {{ shipment.id }}</p>
+<p><strong>Origin:</strong> {{ shipment.origin }}</p>
+<p><strong>Destination:</strong> {{ shipment.destination }}</p>
+<p><strong>Expected Delivery Date:</strong> {{ shipment.expected_delivery_date }}</p>
+<p><strong>Actual Delivery Date:</strong> {{ shipment.actual_delivery_date }}</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Delete</button>
+</form>
