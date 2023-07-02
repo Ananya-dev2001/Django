@@ -1,0 +1,14 @@
+<h2>Create/Update Account</h2>
+<form method="post" action="{% url 'create_or_update_account' %}">
+    {% csrf_token %}
+    <label for="account_number">Account Number:</label>
+    <input type="text" name="account_number" id="account_number">
+    <label for="balance">Balance:</label>
+    <input type="text" name="balance" id="balance">
+    <label for="account_type">Account Type:</label>
+    <select name="account_type" id="account_type">
+        <option value="Savings">Savings</option>
+        <option value="Credit">Credit</option>
+    </select>
+    <button type="submit">Submit</button>
+</form>
