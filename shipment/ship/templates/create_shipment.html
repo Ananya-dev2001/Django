@@ -1,0 +1,15 @@
+from django.shortcuts import render, redirect
+from .models import Shipment
+
+def delete_shipment_view(request, shipment_id):
+    shipment = Shipment.objects.get(pk=shipment_id)
+
+    if request.method == 'POST':
+        shipment.delete()
+        return redirect('shipment_list')
+
+    context = {
+        'shipment': shipment,
+    }
+
+    return render(request, 'delete_shipment.html', context)
